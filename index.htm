@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="js/oops.js"></script>
+		<script type="text/javascript" src="js/rectangle.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#btn").click(getPerimeter);
+            });
+
+            function getPerimeter(){
+                var number = parseInt($("#number").val());
+
+                var obj = new Square(number);
+
+                $("#result").html(obj.perimeter());
+            }
+			$(function(){
+			     $("#rbtn").click(getRectangle);
+			});
+			
+			function getRectangle(){
+			    var width = parseInt($("#width").val());
+			    var length = parseInt($("#length").val());
+				
+				var rect = new Rectangle(width,length);
+				
+				$("#rectresult").html(rect.area());
+			
+			}
+			
+			
+        </script>
+    </head>
+    <body>
+        Enter number : <input type="text" id="number"/> &nbsp; <input type='button' id='btn' value='Square'/>
+
+        <hr/>
+
+        <span id="result"></span>
+		
+		Enter Width : <input type="text" id="width"/><br/>
+		Enter Length : <input type="text" id="length"/>&nbsp; <input type='button' id='rbtn' value='Rectangle'/>
+		
+		<hr/>
+		
+		<span id="rectresult"></span>
+		
+    </body>
+</html>
